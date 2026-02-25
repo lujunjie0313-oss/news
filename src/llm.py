@@ -13,7 +13,7 @@ class NewsAnalyst:
             self.config = yaml.safe_load(f)
             
         api_key = os.getenv("LLM_API_KEY")
-        base_url = os.getenv("LLM_BASE_URL", "https://api.deepseek.com/v1") # 默认 DeepSeek
+        base_url = os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/") # 默认 Gemini OpenAI 兼容地址
         
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.model = self.config['ai']['model']

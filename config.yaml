@@ -50,7 +50,7 @@ keywords:
 
 # 3. AI 分析配置
 ai:
-  model: "deepseek-chat"  # 或 gpt-3.5-turbo, gpt-4
+  model: "gemini-3.1-pro-preview"  # Gemini 高质量模型
   max_tokens: 1000
   temperature: 0.3 # 低温度，保证事实准确性
 
