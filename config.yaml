@@ -1,0 +1,60 @@
+# 行业情报机器人配置文件
+
+# 1. 数据源配置 (RSS & 网站)
+feeds:
+  lidar:
+    - url: "https://www.leiphone.com/feed/category/lidar"
+      name: "雷峰网-激光雷达"
+    - url: "http://www.laserfair.com/?/feed/"
+      name: "激光制造网"
+    - url: "https://www.yolegroup.com/feed/"  # 需要确认有效性，暂作示例
+      name: "Yole Group (传感器权威)"
+    # Google News 关键词订阅 (示例)
+    - url: "https://news.google.com/rss/search?q=LiDAR+technology+market&hl=en-US&gl=US&ceid=US:en"
+      name: "Google News - LiDAR"
+
+  aerospace:
+    - url: "https://36kr.com/feed-topic/commercial-aerospace" # 需确认36kr feed格式
+      name: "36氪-商业航天"
+    - url: "https://spacenews.com/feed/"
+      name: "SpaceNews (权威外媒)"
+    - url: "http://www.chinaspacenews.com.cn/rss"  # 需确认
+      name: "中国航天报"
+
+# 2. 关键词过滤 (支持正则)
+# 文章标题或摘要必须包含以下至少一个词才会被处理
+keywords:
+  include:
+    - "激光雷达"
+    - "LiDAR"
+    - "固态"
+    - "FMCW"
+    - "补盲"
+    - "商业航天"
+    - "火箭"
+    - "卫星"
+    - "发射"
+    - "可回收"
+    - "星链"
+    - "融资"
+    - "IPO"
+    - "定点"
+    - "量产"
+    - "交付"
+
+  # 排除无关信息
+  exclude:
+    - "招聘"
+    - "广告"
+    - "活动报名"
+
+# 3. AI 分析配置
+ai:
+  model: "deepseek-chat"  # 或 gpt-3.5-turbo, gpt-4
+  max_tokens: 1000
+  temperature: 0.3 # 低温度，保证事实准确性
+
+# 4. 邮件配置
+email:
+  subject_prefix: "【行业情报】"
+  sender_name: "Industry Bot"
